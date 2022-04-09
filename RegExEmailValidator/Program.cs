@@ -6,17 +6,49 @@ namespace RegExEmailValidator
     {
         static void Main(string[] args)
         {
+            int ch = 0, caseVal=0;
             Patterns patterns = new Patterns();
-            Console.Write("Enter First Name: ");
-            string firstName = Console.ReadLine();
-            if(patterns.firstNameValidator(firstName) == true)
+            do
             {
-                Console.WriteLine("First Name is valid");
-            }
-            else
-            {
-                Console.WriteLine("First Name Not is valid");
-            }
+                Console.Write("======= MENU =======");
+                Console.Write("\n1.First Name \n2.Last Name");
+                Console.Write("\nEnter your Choice: ");
+                caseVal = Convert.ToInt32(Console.ReadLine());
+                switch (caseVal)
+                {
+                    case 1:
+                        Console.Write("Enter  First Name: ");
+                        string firstName = Console.ReadLine();
+                        if (patterns.firstNameValidator(firstName) == true)
+                        {
+                            Console.WriteLine("First Name is valid");
+                        }
+                        else
+                        {
+                            Console.WriteLine("First Name is Not valid");
+                        }
+                    break;
+                    case 2:
+                        Console.Write("Enter  Last Name: ");
+                        string lastName = Console.ReadLine();
+                        if (patterns.firstNameValidator(lastName) == true)
+                        {
+                            Console.WriteLine("Last Name is valid");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Last Name is Not valid");
+                        }
+                    break;
+
+                    default:
+                        Console.WriteLine("Enter Number in Given Range");
+                    break;
+                }
+                Console.WriteLine("Do you want to Continue ? \n Press 1 for YES \n Press 2 for NO");
+                ch = Convert.ToInt32(Console.ReadLine());
+            } while (ch != 2);
+
         }
     }
 }

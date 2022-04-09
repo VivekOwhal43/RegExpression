@@ -9,6 +9,11 @@ namespace RegExEmailValidator
         public bool firstNameValidator(string firstName)    // method for validating name
         {
             return Regex.IsMatch(firstName,name_validator);     // true or false value will be returned 
+        }
+
+        public bool lastNameValidator(string lastName)    // method for validating last name
+        {
+            return Regex.IsMatch(lastName,name_validator);     // true or false value will be returned 
         }       
     }
 }
