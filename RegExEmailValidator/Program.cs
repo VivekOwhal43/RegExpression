@@ -6,12 +6,13 @@ namespace RegExEmailValidator
     {
         static void Main(string[] args)
         {
-            int ch = 0, caseVal=0;
+            int ch = 0, caseVal = 0;
             Patterns patterns = new Patterns();
             do
             {
                 Console.Write("======= VALIDATION MENU =======");
-                Console.Write("\n   1.First Name \n   2.Last Name \n   3.Email Validation \n   4.MobileNumber Validator");
+                Console.Write("\n   1.First Name \n   2.Last Name \n   3.Email Validation \n   4.MobileNumber Validator\n");
+                Console.Write("   5.Password Validator");
                 Console.Write("\nEnter your Choice: ");
                 caseVal = Convert.ToInt32(Console.ReadLine());
                 switch (caseVal)
@@ -27,7 +28,7 @@ namespace RegExEmailValidator
                         {
                             Console.WriteLine("First Name is Not valid");   //if string is invalid then this bolck will be executed
                         }
-                    break;
+                        break;
                     case 2:
                         Console.Write("Enter  Last Name: ");
                         string lastName = Console.ReadLine();
@@ -39,7 +40,7 @@ namespace RegExEmailValidator
                         {
                             Console.WriteLine("Last Name is Not valid");   //if string is invalid then this bolck will be executed
                         }
-                    break;
+                        break;
                     case 3:
                         Console.Write("Enter email: ");
                         string email = Console.ReadLine();
@@ -49,9 +50,9 @@ namespace RegExEmailValidator
                         }
                         else
                         {
-                            Console.WriteLine("Email is Not valid");    //if string is invalid then this bolck will be executed
+                            Console.WriteLine("Email is Not valid");    //if email is invalid then this bolck will be executed
                         }
-                    break;
+                        break;
                     case 4:
                         Console.Write("Enter Mobile Number: ");
                         string mobNumber = Console.ReadLine();
@@ -61,13 +62,25 @@ namespace RegExEmailValidator
                         }
                         else
                         {
-                            Console.WriteLine("Mobile Number is Not valid");    //if string is invalid then this bolck will be executed
+                            Console.WriteLine("Mobile Number is Not valid");    //if number is invalid then this bolck will be executed
                         }
-                    break;
+                        break;
+                        case 5:
+                        Console.Write("Enter Password: ");
+                        string pass = Console.ReadLine();
+                        if (patterns.paswordValidator(pass) == true)      //checking whether entered password is in correct format
+                        {
+                            Console.WriteLine("Password is valid");       //if password is valid then this bolck will be executed
+                        }
+                        else
+                        {
+                            Console.WriteLine("Password is Not valid");    //if password is invalid then this bolck will be executed
+                        }
+                        break;
 
                     default:
                         Console.WriteLine("Enter Number in Given Range");       // if wrong choice is given then this block will be executed
-                    break;
+                        break;
                 }
                 Console.WriteLine("Do you want to Continue ? \n Press 1 for YES \n Press 2 for NO");
                 ch = Convert.ToInt32(Console.ReadLine());
