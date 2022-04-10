@@ -8,7 +8,7 @@ namespace RegExEmailValidator
         public static string name_validator = "^[A-Z][a-z]{2,}$";   // pattern of string to validate first name
         public static string email_Validator = "^[0-9a-zA-Z]+[./+_-]{0,1}[0-9a-zA-Z]+[@][a-zA-Z0-9-]+[.][a-zA-Z]{2,}([.][a-zA-Z]{2,}){0,1}$"; // pattern for email validation
         public static string mobNumberValidator ="^[0-9]{1,15}[ ][0-9]{10}$";       // pattern for mobile number validation
-        public static string passValidator ="^(?=.*[A-Z])(?=.*[0-9])(?=.{8,})";        // pattern for password validator
+        public static string passValidator =@"^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!*@#$%^&+=]).*$";         //pattern for password validator    ! Warning ! faced CS1009 Error and resolved
         public bool firstNameValidator(string firstName)    // method for validating name
         {
             return Regex.IsMatch(firstName, name_validator);     // true or false value will be returned 
