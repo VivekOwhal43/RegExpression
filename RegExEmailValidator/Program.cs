@@ -11,7 +11,7 @@ namespace RegExEmailValidator
             do
             {
                 Console.Write("======= VALIDATION MENU =======");
-                Console.Write("\n   1.First Name \n   2.Last Name \n   3.Email Validation");
+                Console.Write("\n   1.First Name \n   2.Last Name \n   3.Email Validation \n   4.MobileNumber Validator");
                 Console.Write("\nEnter your Choice: ");
                 caseVal = Convert.ToInt32(Console.ReadLine());
                 switch (caseVal)
@@ -19,42 +19,54 @@ namespace RegExEmailValidator
                     case 1:
                         Console.Write("Enter  First Name: ");
                         string firstName = Console.ReadLine();
-                        if (patterns.firstNameValidator(firstName) == true)
+                        if (patterns.firstNameValidator(firstName) == true)     //checking whether entered string is in correct format
                         {
-                            Console.WriteLine("First Name is valid");
+                            Console.WriteLine("First Name is valid");       //if string is valid then this bolck will be executed
                         }
                         else
                         {
-                            Console.WriteLine("First Name is Not valid");
+                            Console.WriteLine("First Name is Not valid");   //if string is invalid then this bolck will be executed
                         }
                     break;
                     case 2:
                         Console.Write("Enter  Last Name: ");
                         string lastName = Console.ReadLine();
-                        if (patterns.firstNameValidator(lastName) == true)
+                        if (patterns.firstNameValidator(lastName) == true)      //checking whether entered string is in correct format
                         {
-                            Console.WriteLine("Last Name is valid");
+                            Console.WriteLine("Last Name is valid");       //if string is valid then this bolck will be executed
                         }
                         else
                         {
-                            Console.WriteLine("Last Name is Not valid");
+                            Console.WriteLine("Last Name is Not valid");   //if string is invalid then this bolck will be executed
                         }
                     break;
                     case 3:
                         Console.Write("Enter email: ");
                         string email = Console.ReadLine();
-                        if (patterns.emailValidator(email) == true)
+                        if (patterns.emailValidator(email) == true)      //checking whether entered email is in correct format
                         {
-                            Console.WriteLine("Email is valid");
+                            Console.WriteLine("Email is valid");        //if email is valid then this bolck will be executed
                         }
                         else
                         {
-                            Console.WriteLine("Email is Not valid");
+                            Console.WriteLine("Email is Not valid");    //if string is invalid then this bolck will be executed
+                        }
+                    break;
+                    case 4:
+                        Console.Write("Enter Mobile Number: ");
+                        string mobNumber = Console.ReadLine();
+                        if (patterns.mobileNumberValidator(mobNumber) == true)      //checking whether entered number is in correct format
+                        {
+                            Console.WriteLine("Mobile Number is valid");       //if number is valid then this bolck will be executed
+                        }
+                        else
+                        {
+                            Console.WriteLine("Mobile Number is Not valid");    //if string is invalid then this bolck will be executed
                         }
                     break;
 
                     default:
-                        Console.WriteLine("Enter Number in Given Range");
+                        Console.WriteLine("Enter Number in Given Range");       // if wrong choice is given then this block will be executed
                     break;
                 }
                 Console.WriteLine("Do you want to Continue ? \n Press 1 for YES \n Press 2 for NO");
