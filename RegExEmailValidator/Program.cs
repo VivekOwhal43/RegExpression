@@ -10,8 +10,8 @@ namespace RegExEmailValidator
             Patterns patterns = new Patterns();
             do
             {
-                Console.Write("======= MENU =======");
-                Console.Write("\n1.First Name \n2.Last Name");
+                Console.Write("======= VALIDATION MENU =======");
+                Console.Write("\n   1.First Name \n   2.Last Name \n   3.Email Validation");
                 Console.Write("\nEnter your Choice: ");
                 caseVal = Convert.ToInt32(Console.ReadLine());
                 switch (caseVal)
@@ -38,6 +38,18 @@ namespace RegExEmailValidator
                         else
                         {
                             Console.WriteLine("Last Name is Not valid");
+                        }
+                    break;
+                    case 3:
+                        Console.Write("Enter email: ");
+                        string email = Console.ReadLine();
+                        if (patterns.emailValidator(email) == true)
+                        {
+                            Console.WriteLine("Email is valid");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Email is Not valid");
                         }
                     break;
 
